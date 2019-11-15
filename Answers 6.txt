@@ -1,0 +1,26 @@
+1.
+> x <- [Number of lines to be returned. Must be positive integer.] 
+print(file[1:x,])
+
+
+2.
+> iris <- read.csv("iris.csv")
+
+Print the last 2 rows in the last 2 columns to the R terminal.
+> print(iris[(nrow(iris)-1):nrow(iris),(ncol(iris)-1):ncol(iris)])
+
+Get the number of observations for each species included in the data set.
+> length(which(iris$Species=="setosa"))
+> length(which(iris$Species=="versicolor"))
+> length(which(iris$Species=="virginica"))
+
+Get rows with Sepal.Width > 3.5.
+> print(iris[(which(iris$Sepal.Width>3.5)),])
+
+Write the data for the species setosa to a comma-delimited ﬁle names ‘setosa.csv’.
+> write.csv((iris[(which(iris$Species=="setosa")),]), file = "setosa.csv")
+
+Calculate the mean, minimum, and maximum of Petal.Length for observations from virginica.
+> mean(iris$Petal.Length[which(iris$Species=="virginica")])
+> min(iris$Petal.Length[which(iris$Species=="virginica")])
+> max(iris$Petal.Length[which(iris$Species=="virginica")])
